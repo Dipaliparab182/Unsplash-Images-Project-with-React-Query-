@@ -1,8 +1,10 @@
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import { useGlobalContext } from './context'
-const url =
-  'https://api.unsplash.com/search/photos?client_id=9jnZ1bqci1uCGZamEKHqewiJNb4MjXYjIdCgH3bEpMs'
+const url = `https://api.unsplash.com/search/photos?client_id=${
+  import.meta.env.VITE_API_KEY
+}`
+console.log(import.meta.env.VITE_API_KEY)
 const Gallery = () => {
   const { searchTerm } = useGlobalContext()
   const response = useQuery({
